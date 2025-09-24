@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Farmers Connect Lesotho</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .bg-primary {
+            background-color: #2d6a2f;
+        }
+        .text-primary {
+            color: #2d6a2f;
+        }
+        .border-primary {
+            border-color: #2d6a2f;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i data-feather="leaf" class="text-primary"></i>
+                <span class="text-xl font-bold text-primary">Farmers Connect Lesotho</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary">About</a>
+                <a href="marketplace.html" class="text-primary font-medium">Marketplace</a>
+                <a href="login.html" class="text-gray-600 hover:text-primary">Login</a>
+                <a href="register.html" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-green-700">Register</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-primary"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-md" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-primary">Home</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-primary">About</a>
+            <a href="marketplace.html" class="block py-2 text-primary font-medium">Marketplace</a>
+            <a href="login.html" class="block py-2 text-gray-600 hover:text-primary">Login</a>
+            <a href="register.html" class="block py-2 text-primary font-medium">Register</a>
+        </div>
+    </nav>
+
+    <!-- Marketplace Header -->
+    <section class="bg-gradient-to-r from-green-50 to-green-100 py-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-aos="fade-up">Farmers Marketplace</h1>
+            <p class="text-lg text-gray-600 mb-6" data-aos="fade-up" data-aos-delay="100">Fresh produce directly from Lesotho's farmers</p>
+            
+            <!-- Search and Filters -->
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0">
+                    <div class="flex-1 relative">
+                        <i data-feather="search" class="absolute left-3 top-3 text-gray-400"></i>
+                        <input type="text" placeholder="Search for products..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <select class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option>All Categories</option>
+                        <option>Vegetables</option>
+                        <option>Fruits</option>
+                        <option>Meat & Poultry</option>
+                        <option>Dairy</option>
+                        <option>Grains</option>
+                    </select>
+                    <select class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option>All Districts</option>
+                        <option>Maseru</option>
+                        <option>Berea</option>
+                        <option>Leribe</option>
+                        <option>Mafeteng</option>
+                        <option>Mohale's Hoek</option>
+                    </select>
+                    <button class="bg-primary text-white px-6 py-2 rounded-md hover:bg-green-700">Filter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Farmer -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6" data-aos="fade-up">Featured Farmer</h2>
+            <div class="bg-green-50 rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                <div class="md:flex">
+                    <div class="md:w-1/4">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Featured Farmer" class="h-full w-full object-cover">
+                    </div>
+                    <div class="p-6 md:w-3/4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="uppercase tracking-wide text-sm text-primary font-semibold mb-1">Featured Farmer</div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Matseliso Mokoena</h3>
+                                <div class="flex items-center mb-4">
+                                    <div class="flex mr-4">
+                                        <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                                        <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                                        <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                                        <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                                        <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                                        <span class="ml-2 text-gray-600">5.0 (42 reviews)</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-600">
+                                        <i data-feather="map-pin" class="mr-1"></i>
+                                        <span>Berea, Lesotho</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="bg-primary text-white px-4 py-2 rounded-md hover:bg-green-700 flex items-center">
+                                <i data-feather="shopping-cart" class="mr-2"></i>
+                                View Products
+                            </button>
+                        </div>
+                        <p class="text-gray-600 mb-4">Specializing in organic vegetables and free-range eggs. Our farm uses sustainable practices to deliver the freshest produce to your table.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-primary px-3 py-1 rounded-full text-sm">Organic</span>
+                            <span class="bg-green-100 text-primary px-3 py-1 rounded-full text-sm">Sustainable</span>
+                            <span class="bg-green-100 text-primary px-3 py-1 rounded-full text-sm">Free-range</span>
+                            <span class="bg-green-100 text-primary px-3 py-1 rounded-full text-sm">Locally Grown</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold text-gray-800" data-aos="fade-up">Fresh Produce</h2>
+                <div class="flex items-center space-x-2" data-aos="fade-up">
+                    <span class="text-gray-600">Sort by:</span>
+                    <select class="border border-gray-300 rounded-md px-3 py-1 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option>Popular</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest</option>
+                        <option>Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Product 1 - Tomatoes -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card" data-aos="fade-up">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546470427-e212b7d3106a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Tomatoes" class="w-full h-full object-cover product-image transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Fresh Tomatoes</h3>
+                        <div class="flex items-center mb-2">
+                            <i data-feather="user" class="text-gray-500 w-4 h-4 mr-1"></i>
+                            <span class="text-sm text-gray-600">Thabo's Farm</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-gray-300 w-4 h-4"></i>
+                            <span class="text-xs text-gray-500 ml-1">(24)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-primary">M25.50/kg</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">M24.00/kg</span>
+                            </div>
+                            <button class="bg-primary text-white p-2 rounded-full hover:bg-green-700">
+                                <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 - Cabbage -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546470427-e212b7d3106a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Cabbage" class="w-full h-full object-cover product-image transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Green Cabbage</h3>
+                        <div class="flex items-center mb-2">
+                            <i data-feather="user" class="text-gray-500 w-4 h-4 mr-1"></i>
+                            <span class="text-sm text-gray-600">Matseliso's Farm</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <span class="text-xs text-gray-500 ml-1">(36)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-primary">M15.75/head</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">M15.00/head</span>
+                            </div>
+                            <button class="bg-primary text-white p-2 rounded-full hover:bg-green-700">
+                                <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 - Chicken -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589227365533-cee630bd59bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Chicken" class="w-full h-full object-cover product-image transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-yellow-500 text-white text-xs px-2 py-1 rounded-full">Low Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Free-range Chicken</h3>
+                        <div class="flex items-center mb-2">
+                            <i data-feather="user" class="text-gray-500 w-4 h-4 mr-1"></i>
+                            <span class="text-sm text-gray-600">Teboho's Poultry</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-gray-300 w-4 h-4"></i>
+                            <span class="text-xs text-gray-500 ml-1">(18)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-primary">M85.00/kg</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">M80.00/kg</span>
+                            </div>
+                            <button class="bg-primary text-white p-2 rounded-full hover:bg-green-700">
+                                <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 - Apples -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Apples" class="w-full h-full object-cover product-image transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Fresh Apples</h3>
+                        <div class="flex items-center mb-2">
+                            <i data-feather="user" class="text-gray-500 w-4 h-4 mr-1"></i>
+                            <span class="text-sm text-gray-600">Lerato's Orchard</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <span class="text-xs text-gray-500 ml-1">(29)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-primary">M30.00/kg</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">M28.50/kg</span>
+                            </div>
+                            <button class="bg-primary text-white p-2 rounded-full hover:bg-green-700">
+                                <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 - Eggs -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card" data-aos="fade-up">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Eggs" class="w-full h-full object-cover product-image transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Free-range Eggs</h3>
+                        <div class="flex items-center mb-2">
+                            <i data-feather="user" class="text-gray-500 w-4 h-4 mr-1"></i>
+                            <span class="text-sm text-gray-600">Mpho's Farm</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-gray-300 w-4 h-4"></i>
+                            <span class="text-xs text-gray-500 ml-1">(15)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-primary">M42.00/dozen</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">M40.00/dozen</span>
+                            </div>
+                            <button class="bg-primary text-white p-2 rounded-full hover:bg-green-700">
+                                <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 - Maize Meal -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Maize" class="w-full h-full object-cover product-image transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Maize Meal</h3>
+                        <div class="flex items-center mb-2">
+                            <i data-feather="user" class="text-gray-500 w-4 h-4 mr-1"></i>
+                            <span class="text-sm text-gray-600">Thabiso's Mill</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <span class="text-xs text-gray-500 ml-1">(31)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-primary">M35.00/5kg</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">M33.25/5kg</span>
+                            </div>
+                            <button class="bg-primary text-white p-2 rounded-full hover:bg-green-700">
+                                <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 - Milk -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Milk" class="w-full h-full object-cover product-image transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">Out of Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Fresh Milk</h3>
+                        <div class="flex items-center mb-2">
+                            <i data-feather="user" class="text-gray-500 w-4 h-4 mr-1"></i>
+                            <span class="text-sm text-gray-600">Mokone Dairy</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-gray-300 w-4 h-4"></i>
+                            <span class="text-xs text-gray-500 ml-1">(22)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-primary">M18.00/liter</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">M17.10/liter</span>
+                            </div>
+                            <button class="bg-gray-300 text-gray-500 p-2 rounded-full cursor-not-allowed">
+                                <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 - Honey -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587049352848-4c26778b99f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300&q=80" alt="Honey" class="w-full h-full object-cover product-image transition-transform duration-300">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full">In Stock</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-1">Pure Honey</h3>
+                        <div class="flex items-center mb-2">
+                            <i data-feather="user" class="text-gray-500 w-4 h-4 mr-1"></i>
+                            <span class="text-sm text-gray-600">Lesotho Honey Co.</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            <span class="text-xs text-gray-500 ml-1">(47)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-primary">M120.00/500g</span>
+                                <span class="text-xs text-gray-500 line-through ml-1">M114.00/500g</span>
+                            </div>
+                            <button class="bg-primary text-white p-2 rounded-full hover:bg-green-700">
+                                <i data-feather="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12" data-aos="fade-up">
+                <nav class="flex items-center space-x-2">
+                    <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50">
+                        <i data-feather="chevron-left" class="w-4 h-4"></i>
+                    </button>
+                    <button class="px-3 py-1 rounded-md bg-primary text-white">1</button>
+                    <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">2</button>
+                    <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">3</button>
+                    <span class="px-2 text-gray-500">...</span>
+                    <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">8</button>
+                    <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50">
+                        <i data-feather="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Farmers Connect Lesotho</h3>
+                    <p class="text-green-100">Connecting Basotho farmers with consumers for a sustainable future.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-green-100 hover:text-white">Home</a></li>
+                        <li><a href="marketplace.html" class="text-green-100 hover:text-white">Marketplace</a></li>
+                        <li><a href="about.html" class="text-green-100 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-green-100 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-green-100">
+                        <li>Email: info@farmersconnect.ls</li>
+                        <li>Phone: +266 1234 5678</li>
+                        <li>Maseru, Lesotho</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-green-100 mb-2">Subscribe for updates</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l-md text-gray-800 w-full">
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-r-md hover:bg-green-700">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-green-600 mt-8 pt-6 text-center text-green-100">
+                <p>&copy; 2024 Farmers Connect Lesotho. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Feather Icons and AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Feather Icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+            
+            // Initialize AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true
+                });
+            }
+
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Add to cart functionality
+            const cartButtons = document.querySelectorAll('button:has(.feather-shopping-cart)');
+            cartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (!this.classList.contains('cursor-not-allowed')) {
+                        const productName = this.closest('.product-card').querySelector('h3').textContent;
+                        alert(`Added ${productName} to cart!`);
+                        // Here you would normally add to cart logic
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
