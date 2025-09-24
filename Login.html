@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Farmers Connect Lesotho</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .bg-primary {
+            background-color: #2d6a2f;
+        }
+        .text-primary {
+            color: #2d6a2f;
+        }
+        .border-primary {
+            border-color: #2d6a2f;
+        }
+        .login-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        .floating-image {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i data-feather="leaf" class="text-primary"></i>
+                <span class="text-xl font-bold text-primary">Farmers Connect Lesotho</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary">About</a>
+                <a href="marketplace.html" class="text-gray-600 hover:text-primary">Marketplace</a>
+                <a href="login.html" class="text-primary font-medium">Login</a>
+                <a href="register.html" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-green-700">Register</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-primary"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-md" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-primary">Home</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-primary">About</a>
+            <a href="marketplace.html" class="block py-2 text-gray-600 hover:text-primary">Marketplace</a>
+            <a href="login.html" class="block py-2 text-primary font-medium">Login</a>
+            <a href="register.html" class="block py-2 text-primary font-medium">Register</a>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="min-h-screen py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Login Form -->
+                <div class="login-card rounded-2xl shadow-xl p-8" data-aos="fade-right">
+                    <div class="text-center mb-8">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h1>
+                        <p class="text-gray-600">Sign in to your Farmers Connect account</p>
+                    </div>
+
+                    <!-- Social Login Options -->
+                    <div class="mb-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <button class="flex items-center justify-center py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i data-feather="facebook" class="w-5 h-5 text-blue-600 mr-2"></i>
+                                <span class="text-sm font-medium">Facebook</span>
+                            </button>
+                            <button class="flex items-center justify-center py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                                <i data-feather="mail" class="w-5 h-5 text-red-600 mr-2"></i>
+                                <span class="text-sm font-medium">Google</span>
+                            </button>
+                        </div>
+                        <div class="relative my-6">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-white text-gray-500">Or continue with email</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="loginForm" class="space-y-6">
+                        <!-- User Type Selection -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">I am logging in as:</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button type="button" class="user-type-btn active py-3 px-4 border-2 border-primary rounded-lg text-center transition-all duration-200" data-type="farmer">
+                                    <i data-feather="user" class="w-5 h-5 mx-auto mb-1"></i>
+                                    <span class="font-medium text-sm">Farmer</span>
+                                </button>
+                                <button type="button" class="user-type-btn py-3 px-4 border-2 border-gray-300 rounded-lg text-center transition-all duration-200" data-type="customer">
+                                    <i data-feather="shopping-cart" class="w-5 h-5 mx-auto mb-1"></i>
+                                    <span class="font-medium text-sm">Customer</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <div class="relative">
+                                <i data-feather="mail" class="absolute left-3 top-3 text-gray-400 w-5 h-5"></i>
+                                <input type="email" name="email" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Password *</label>
+                            <div class="relative">
+                                <i data-feather="lock" class="absolute left-3 top-3 text-gray-400 w-5 h-5"></i>
+                                <input type="password" name="password" id="password" class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your password" required>
+                                <button type="button" id="togglePassword" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="remember" class="rounded border-gray-300 text-primary focus:ring-primary">
+                                <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                            </label>
+                            <a href="forgot-password.html" class="text-sm text-primary hover:underline">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 flex items-center justify-center">
+                            <i data-feather="log-in" class="w-5 h-5 mr-2"></i>
+                            Sign In
+                        </button>
+
+                        <div class="text-center">
+                            <p class="text-gray-600">Don't have an account? <a href="register.html" class="text-primary font-medium hover:underline">Create one here</a></p>
+                        </div>
+                    </form>
+
+                    <!-- Demo Accounts -->
+                    <div class="mt-8 p-4 bg-green-50 rounded-lg border border-green-200">
+                        <h4 class="font-medium text-green-800 mb-2 flex items-center">
+                            <i data-feather="info" class="w-4 h-4 mr-2"></i>
+                            Demo Accounts (For Testing)
+                        </h4>
+                        <div class="space-y-2 text-sm text-green-700">
+                            <div><strong>Farmer:</strong> farmer@demo.com / password: demo123</div>
+                            <div><strong>Customer:</strong> customer@demo.com / password: demo123</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Features & Benefits -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <!-- Welcome Message -->
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-4xl font-bold text-gray-800 mb-4">Welcome to Farmers Connect Lesotho</h2>
+                        <p class="text-lg text-gray-600">Join thousands of farmers and customers connecting directly for fresh, local produce.</p>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i data-feather="trending-up" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mb-2">Boost Your Sales</h3>
+                            <p class="text-gray-600 text-sm">Farmers increase revenue by connecting directly with customers.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i data-feather="shopping-bag" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mb-2">Fresh Products</h3>
+                            <p class="text-gray-600 text-sm">Customers get farm-fresh produce delivered to their doorstep.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i data-feather="users" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mb-2">Build Community</h3>
+                            <p class="text-gray-600 text-sm">Connect with local farmers and build lasting relationships.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i data-feather="award" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mb-2">Trust & Quality</h3>
+                            <p class="text-gray-600 text-sm">Verified farmers and quality products you can trust.</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials Carousel -->
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="font-bold text-gray-800 mb-4 flex items-center">
+                            <i data-feather="message-circle" class="w-5 h-5 mr-2 text-primary"></i>
+                            What Our Users Say
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80" alt="Thabo Mokoena" class="w-12 h-12 rounded-full">
+                                <div>
+                                    <div class="flex items-center mb-1">
+                                        <span class="font-medium text-gray-800">Thabo Mokoena</span>
+                                        <div class="flex ml-2 text-yellow-400">
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">"This platform transformed my small farm into a thriving business. Direct customer connections made all the difference!"</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80" alt="Matseliso Ntai" class="w-12 h-12 rounded-full">
+                                <div>
+                                    <div class="flex items-center mb-1">
+                                        <span class="font-medium text-gray-800">Matseliso Ntai</span>
+                                        <div class="flex ml-2 text-yellow-400">
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">"As a busy mother, Farmers Connect saves me time and money while ensuring my family eats fresh, healthy food."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="bg-primary text-white rounded-xl shadow-md p-6">
+                        <h3 class="font-bold mb-4">Our Growing Community</h3>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold">500+</div>
+                                <div class="text-sm opacity-90">Active Farmers</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold">2K+</div>
+                                <div class="text-sm opacity-90">Happy Customers</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold">10K+</div>
+                                <div class="text-sm opacity-90">Products Sold</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Farmers Connect Lesotho</h3>
+                    <p class="text-gray-400">Bridging the gap between farmers and consumers in Lesotho.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="marketplace.html" class="text-gray-400 hover:text-white">Marketplace</a></li>
+                        <li><a href="register.html" class="text-gray-400 hover:text-white">Register</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-400">Email: info@farmersconnectls.com</p>
+                        <p class="text-gray-400">Phone: +266 1234 5678</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Farmers Connect Lesotho. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations and icons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Initialize Feather Icons
+            feather.replace();
+
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // User type selection
+            const userTypeButtons = document.querySelectorAll('.user-type-btn');
+            
+            userTypeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    userTypeButtons.forEach(btn => {
+                        btn.classList.remove('active', 'border-primary', 'bg-primary', 'text-white');
+                        btn.classList.add('border-gray-300', 'text-gray-700');
+                    });
+
+                    // Add active class to clicked button
+                    this.classList.add('active', 'border-primary', 'bg-primary', 'text-white');
+                    this.classList.remove('border-gray-300', 'text-gray-700');
+                });
+            });
+
+            // Toggle password visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            
+            if (togglePassword && passwordInput) {
+                togglePassword.addEventListener('click', function() {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    
+                    // Change icon
+                    const icon = this.querySelector('i');
+                    if (type === 'password') {
+                        feather.icons.eye.replace(icon);
+                    } else {
+                        feather.icons.eye-off.replace(icon);
+                    }
+                });
+            }
+
+            // Form submission
+            const loginForm = document.getElementById('loginForm');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = this.querySelector('input[name="email"]').value;
+                const password = this.querySelector('input[name="password"]').value;
+                const userType = document.querySelector('.user-type-btn.active').getAttribute('data-type');
+
+                // Demo login logic
+                const demoAccounts = {
+                    'farmer@demo.com': { password: 'demo123', type: 'farmer', name: 'Thabo Mokoena' },
+                    'customer@demo.com': { password: 'demo123', type: 'customer', name: 'Matseliso Ntai' }
+                };
+
+                if (demoAccounts[email] && demoAccounts[email].password === password) {
+                    const user = demoAccounts[email];
+                    
+                    // Show success message
+                    alert(`Welcome back, ${user.name}! Successfully logged in as ${user.type}.`);
+                    
+                    // Redirect based on user type
+                    if (user.type === 'farmer') {
+                        window.location.href = 'farmer-dashboard.html';
+                    } else {
+                        window.location.href = 'marketplace.html';
+                    }
+                } else {
+                    // Show error message
+                    alert('Invalid email or password. Please try again or use the demo accounts provided.');
+                }
+            });
+
+            // Add floating animation to images
+            gsap.to('.floating-image', {
+                y: 20,
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        });
+    </script>
+</body>
+</html>
