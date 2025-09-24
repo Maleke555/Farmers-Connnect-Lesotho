@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Farmers Connect Lesotho</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .bg-primary {
+            background-color: #2d6a2f;
+        }
+        .text-primary {
+            color: #2d6a2f;
+        }
+        .border-primary {
+            border-color: #2d6a2f;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i data-feather="leaf" class="text-primary"></i>
+                <span class="text-xl font-bold text-primary">Farmers Connect Lesotho</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary">About</a>
+                <a href="marketplace.html" class="text-gray-600 hover:text-primary">Marketplace</a>
+                <a href="learning-hub.html" class="text-gray-600 hover:text-primary">Learning Hub</a>
+                <a href="login.html" class="text-gray-600 hover:text-primary">Login</a>
+                <a href="register.html" class="text-primary font-medium">Register</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-primary"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-md" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-primary">Home</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-primary">About</a>
+            <a href="marketplace.html" class="block py-2 text-gray-600 hover:text-primary">Marketplace</a>
+            <a href="learning-hub.html" class="block py-2 text-gray-600 hover:text-primary">Learning Hub</a>
+            <a href="login.html" class="block py-2 text-gray-600 hover:text-primary">Login</a>
+            <a href="register.html" class="block py-2 text-primary font-medium">Register</a>
+        </div>
+    </nav>
+
+    <!-- Registration Section -->
+    <section class="py-16 bg-gray-50 min-h-screen">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Create Your Account</h1>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Join our community of farmers and customers to buy and sell fresh produce directly</p>
+                </div>
+
+                <!-- Registration Tabs -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8" data-aos="fade-up">
+                    <div class="border-b border-gray-200">
+                        <nav class="flex">
+                            <button class="flex-1 py-4 px-6 text-center font-medium text-primary border-b-2 border-primary focus:outline-none" id="farmer-tab">
+                                Register as Farmer
+                            </button>
+                            <button class="flex-1 py-4 px-6 text-center font-medium text-gray-500 hover:text-gray-700 focus:outline-none" id="customer-tab">
+                                Register as Customer
+                            </button>
+                        </nav>
+                    </div>
+
+                    <!-- Farmer Registration Form -->
+                    <div class="p-6 md:p-8" id="farmer-form">
+                        <form id="farmer-registration-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="full-name">Full Name</label>
+                                    <input type="text" id="full-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="national-id">National ID (12 digits)</label>
+                                    <input type="text" id="national-id" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" pattern="[0-9]{12}" maxlength="12" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="farm-location">Farm Location</label>
+                                    <select id="farm-location" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                        <option value="">Select District</option>
+                                        <option value="maseru">Maseru</option>
+                                        <option value="berea">Berea</option>
+                                        <option value="leribe">Leribe</option>
+                                        <option value="mafeteng">Mafeteng</option>
+                                        <option value="mohales-hoek">Mohale's Hoek</option>
+                                        <option value="quthing">Quthing</option>
+                                        <option value="qacha-nek">Qacha's Nek</option>
+                                        <option value="mokhotlong">Mokhotlong</option>
+                                        <option value="thaba-tseka">Thaba-Tseka</option>
+                                        <option value="botha-bothe">Botha-Bothe</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="farmer-email">Email Address</label>
+                                    <input type="email" id="farmer-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="farmer-password">Password</label>
+                                    <input type="password" id="farmer-password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required minlength="8">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="confirm-password">Confirm Password</label>
+                                    <input type="password" id="confirm-password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required minlength="8">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" required>
+                                    <span class="ml-2 text-gray-600">I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-medium hover:bg-green-700 transition-colors">Register as Farmer</button>
+                        </form>
+                    </div>
+
+                    <!-- Customer Registration Form (Hidden by default) -->
+                    <div class="p-6 md:p-8 hidden" id="customer-form">
+                        <form id="customer-registration-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="customer-name">Full Name</label>
+                                    <input type="text" id="customer-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="customer-email">Email Address</label>
+                                    <input type="email" id="customer-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="customer-password">Password</label>
+                                    <input type="password" id="customer-password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required minlength="8">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2" for="customer-confirm-password">Confirm Password</label>
+                                    <input type="password" id="customer-confirm-password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required minlength="8">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" required>
+                                    <span class="ml-2 text-gray-600">I agree to the <a href="#" class="text-primary hover:underline">Terms of Service</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-medium hover:bg-green-700 transition-colors">Register as Customer</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="text-center" data-aos="fade-up">
+                    <p class="text-gray-600">Already have an account? <a href="login.html" class="text-primary font-medium hover:underline">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Farmers Connect Lesotho</h3>
+                    <p class="text-gray-400">Bridging the gap between farmers and consumers in Lesotho.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="marketplace.html" class="text-gray-400 hover:text-white">Marketplace</a></li>
+                        <li><a href="learning-hub.html" class="text-gray-400 hover:text-white">Learning Hub</a></li>
+                        <li><a href="login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                        <li><a href="register.html" class="text-gray-400 hover:text-white">Register</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-400">Email: info@farmersconnectls.com</p>
+                        <p class="text-gray-400">Phone: +266 1234 5678</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Farmers Connect Lesotho. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Tab switching functionality
+        const farmerTab = document.getElementById('farmer-tab');
+        const customerTab = document.getElementById('customer-tab');
+        const farmerForm = document.getElementById('farmer-form');
+        const customerForm = document.getElementById('customer-form');
+
+        farmerTab.addEventListener('click', function() {
+            farmerTab.classList.add('text-primary', 'border-primary');
+            farmerTab.classList.remove('text-gray-500', 'hover:text-gray-700');
+            customerTab.classList.remove('text-primary', 'border-primary');
+            customerTab.classList.add('text-gray-500', 'hover:text-gray-700');
+            farmerForm.classList.remove('hidden');
+            customerForm.classList.add('hidden');
+        });
+
+        customerTab.addEventListener('click', function() {
+            customerTab.classList.add('text-primary', 'border-primary');
+            customerTab.classList.remove('text-gray-500', 'hover:text-gray-700');
+            farmerTab.classList.remove('text-primary', 'border-primary');
+            farmerTab.classList.add('text-gray-500', 'hover:text-gray-700');
+            customerForm.classList.remove('hidden');
+            farmerForm.classList.add('hidden');
+        });
+
+        // Form validation and submission
+        document.getElementById('farmer-registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, you would submit the form data to a server here
+            alert('Farmer registration submitted! In a real application, this would create your account.');
+        });
+
+        document.getElementById('customer-registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, you would submit the form data to a server here
+            alert('Customer registration submitted! In a real application, this would create your account.');
+        });
+
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
