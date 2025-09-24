@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Connect Lesotho</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <style>
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .bg-primary {
+            background-color: #2d6a2f;
+        }
+        .text-primary {
+            color: #2d6a2f;
+        }
+        .border-primary {
+            border-color: #2d6a2f;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i data-feather="leaf" class="text-primary"></i>
+                <span class="text-xl font-bold text-primary">Farmers Connect Lesotho</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-primary font-medium">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary">About</a>
+                <a href="marketplace.html" class="text-gray-600 hover:text-primary">Marketplace</a>
+                <a href="login.html" class="text-gray-600 hover:text-primary">Login</a>
+                <a href="register.html" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-green-700">Register</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-primary"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-md" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-primary font-medium">Home</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-primary">About</a>
+            <a href="marketplace.html" class="block py-2 text-gray-600 hover:text-primary">Marketplace</a>
+            <a href="login.html" class="block py-2 text-gray-600 hover:text-primary">Login</a>
+            <a href="register.html" class="block py-2 text-primary font-medium">Register</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-green-50 to-green-100 py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Connecting Lesotho's Farmers to Customers</h1>
+                <p class="text-lg text-gray-600 mb-8">Buy fresh produce directly from local farmers or sell your harvest with ease.</p>
+                <div class="flex space-x-4">
+                    <a href="register.html" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-green-700 font-medium">Join Now</a>
+                    <a href="marketplace.html" class="border border-primary text-primary px-6 py-3 rounded-md hover:bg-green-50 font-medium">Browse Marketplace</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative" data-aos="fade-left">
+                <div class="relative h-96">
+                    <img src="http://static.photos/agriculture/640x360/1" alt="Farmer" class="absolute top-0 left-0 w-64 rounded-lg shadow-xl z-10 animate-float">
+                    <img src="http://static.photos/food/640x360/2" alt="Vegetables" class="absolute top-20 right-0 w-56 rounded-lg shadow-xl animate-float" style="animation-delay: 0.5s;">
+                    <img src="http://static.photos/nature/640x360/3" alt="Farm" class="absolute bottom-0 left-1/4 w-60 rounded-lg shadow-xl animate-float" style="animation-delay: 1s;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Farmer -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Featured Farmer of the Week</h2>
+            <div class="max-w-4xl mx-auto bg-green-50 rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <img src="http://static.photos/people/640x360/4" alt="Featured Farmer" class="h-full w-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <div class="uppercase tracking-wide text-sm text-primary font-semibold mb-1">Featured Farmer</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Thabo Mokoena</h3>
+                        <div class="flex mb-4">
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                            <i data-feather="star" class="text-yellow-400 fill-yellow-400"></i>
+                            <span class="ml-2 text-gray-600">5.0 (32 reviews)</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Specializing in organic vegetables and free-range poultry. Located in Maseru District with over 10 years of farming experience.</p>
+                        <div class="flex items-center text-gray-500 mb-2">
+                            <i data-feather="map-pin" class="mr-2"></i>
+                            <span>Maseru, Lesotho</span>
+                        </div>
+                        <div class="flex items-center text-gray-500">
+                            <i data-feather="calendar" class="mr-2"></i>
+                            <span>Member since 2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Browse Categories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-40 bg-green-100 flex items-center justify-center">
+                        <i data-feather="carrot" class="text-primary w-12 h-12"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Vegetables</h3>
+                        <p class="text-gray-600">Fresh from the farm</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-40 bg-green-100 flex items-center justify-center">
+                        <i data-feather="apple" class="text-primary w-12 h-12"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Fruits</h3>
+                        <p class="text-gray-600">Seasonal and delicious</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-40 bg-green-100 flex items-center justify-center">
+                        <i data-feather="drumstick" class="text-primary w-12 h-12"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Meat & Poultry</h3>
+                        <p class="text-gray-600">Farm fresh quality</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-40 bg-green-100 flex items-center justify-center">
+                        <i data-feather="shopping-bag" class="text-primary w-12 h-12"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Other Products</h3>
+                        <p class="text-gray-600">Dairy, grains & more</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="user-plus" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">1. Create Account</h3>
+                    <p class="text-gray-600">Register as a farmer or customer in just a few minutes.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="shopping-cart" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">2. Browse or List Products</h3>
+                    <p class="text-gray-600">Farmers list their products, customers browse and shop.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="truck" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">3. Connect & Transact</h3>
+                    <p class="text-gray-600">Arrange delivery or pickup and enjoy fresh farm products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">What Our Users Say</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/5" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Matseliso Ntai</h4>
+                            <div class="flex">
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"As a busy mother, Farmers Connect Lesotho has made it so easy to get fresh, affordable produce directly from local farmers. The quality is amazing!"</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/6" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Teboho Mohapi</h4>
+                            <div class="flex">
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                                <i data-feather="star" class="text-yellow-400 fill-yellow-400 w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"This platform has transformed my small farm business. I now reach customers directly, get fair prices, and have built lasting relationships with buyers."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Ready to Join Our Farming Community?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Whether you're a farmer looking to sell your produce or a customer wanting fresh, local food, we've got you covered.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="register.html" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100">Sign Up Now</a>
+                <a href="about.html" class="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-green-700">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Farmers Connect Lesotho</h3>
+                    <p class="text-gray-400">Bridging the gap between farmers and consumers in Lesotho.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="marketplace.html" class="text-gray-400 hover:text-white">Marketplace</a></li>
+                        <li><a href="login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-400">Email: info@farmersconnectls.com</p>
+                        <p class="text-gray-400">Phone: +266 1234 5678</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Farmers Connect Lesotho. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Animate floating elements
+        gsap.to(".animate-float", {
+            y: 20,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
