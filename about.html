@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Farmers Connect Lesotho</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .bg-primary {
+            background-color: #2d6a2f;
+        }
+        .text-primary {
+            color: #2d6a2f;
+        }
+        .border-primary {
+            border-color: #2d6a2f;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <i data-feather="leaf" class="text-primary"></i>
+                <span class="text-xl font-bold text-primary">Farmers Connect Lesotho</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                <a href="about.html" class="text-primary font-medium">About</a>
+                <a href="marketplace.html" class="text-gray-600 hover:text-primary">Marketplace</a>
+                <a href="login.html" class="text-gray-600 hover:text-primary">Login</a>
+                <a href="register.html" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-green-700">Register</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-primary"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white w-full px-4 py-2 shadow-md" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-primary">Home</a>
+            <a href="about.html" class="block py-2 text-primary font-medium">About</a>
+            <a href="marketplace.html" class="block py-2 text-gray-600 hover:text-primary">Marketplace</a>
+            <a href="login.html" class="block py-2 text-gray-600 hover:text-primary">Login</a>
+            <a href="register.html" class="block py-2 text-primary font-medium">Register</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-50 to-green-100 py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4" data-aos="fade-up">About Farmers Connect Lesotho</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Our mission is to empower local farmers and provide customers with fresh, high-quality produce directly from the source.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="http://static.photos/agriculture/640x360/7" alt="Farmers in Lesotho" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2020, Farmers Connect Lesotho began as a small initiative to help local farmers in Maseru District sell their produce directly to consumers, bypassing middlemen who often took most of the profits.</p>
+                    <p class="text-gray-600 mb-4">What started as a WhatsApp group connecting 15 farmers to 50 customers has now grown into Lesotho's premier digital farming marketplace, serving thousands of farmers and customers across all 10 districts.</p>
+                    <p class="text-gray-600">Our platform is built by Basotho, for Basotho, with the goal of strengthening local agriculture and food security while ensuring fair compensation for our hardworking farmers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-up">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="target" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                    <p class="text-gray-600">To create a sustainable digital ecosystem that connects Lesotho's farmers directly with consumers, eliminating unnecessary intermediaries, reducing food waste, and ensuring fair prices for both producers and buyers.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="eye" class="text-primary w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                    <p class="text-gray-600">To become the leading agricultural marketplace in Lesotho, transforming the way food is produced, distributed, and consumed while supporting the growth of sustainable farming practices and food security nationwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Our Core Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-primary bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="users" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Community First</h3>
+                    <p class="text-gray-600">We prioritize the needs of both farmers and customers, building relationships that benefit all members of our community.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Integrity</h3>
+                    <p class="text-gray-600">We operate with honesty and transparency in all our dealings, ensuring trust between all parties on our platform.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-primary bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="trending-up" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Sustainability</h3>
+                    <p class="text-gray-600">We promote farming practices that protect the environment while ensuring long-term viability for agricultural businesses.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-primary bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="heart" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Quality</h3>
+                    <p class="text-gray-600">We maintain high standards for all products on our platform, ensuring customers receive fresh, healthy, and authentic farm produce.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-primary bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="globe" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Local Empowerment</h3>
+                    <p class="text-gray-600">We're committed to strengthening Lesotho's agricultural sector and keeping wealth within our communities.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-primary bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="zap" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Innovation</h3>
+                    <p class="text-gray-600">We continuously improve our platform to better serve our users, leveraging technology to solve real agricultural challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Meet Our Team</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/people/200x200/8" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Lerato Molefe</h3>
+                    <p class="text-primary font-medium mb-4">Founder & CEO</p>
+                    <p class="text-gray-600">Agricultural economist with a passion for rural development and food security.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/people/200x200/9" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Teboho Letsie</h3>
+                    <p class="text-primary font-medium mb-4">CTO</p>
+                    <p class="text-gray-600">Tech enthusiast dedicated to building solutions that empower African agriculture.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/people/200x200/10" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Mpho Mokone</h3>
+                    <p class="text-primary font-medium mb-4">Farmer Relations</p>
+                    <p class="text-gray-600">Former farmer with deep understanding of agricultural challenges in Lesotho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Join Our Growing Community</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Whether you're a farmer looking to expand your market or a customer wanting fresh, local produce, we'd love to have you.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="register.html" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100">Sign Up Now</a>
+                <a href="contact.html" class="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-green-700">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Farmers Connect Lesotho</h3>
+                    <p class="text-gray-400">Bridging the gap between farmers and consumers in Lesotho.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="marketplace.html" class="text-gray-400 hover:text-white">Marketplace</a></li>
+                        <li><a href="login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-400">Email: info@farmersconnectls.com</p>
+                        <p class="text-gray-400">Phone: +266 1234 5678</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Farmers Connect Lesotho. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
